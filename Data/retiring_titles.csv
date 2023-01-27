@@ -1,8 +1,10 @@
-count,title
-25916,Senior Engineer
-24926,Senior Staff
-9285,Engineer
-7636,Staff
-3603,Technique Leader
-1090,Assistant Engineer
-2,Manager
+Row Labels,Sum of Sum of count
+Assistant Engineer,1090
+Engineer,9285
+Grand Total,72458
+Manager,2
+Senior Engineer,25916
+Senior Staff,24926
+Staff,7636
+Technique Leader,3603
+Grand Total,144916

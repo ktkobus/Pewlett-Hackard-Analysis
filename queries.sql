@@ -193,3 +193,5 @@ FROM current_emp as ce
 	INNER JOIN departments as d
 		ON (de.dept_no = d.dept_no)
 WHERE d.dept_name IN ('Sales', 'Development');
+
+
