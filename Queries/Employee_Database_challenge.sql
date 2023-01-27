@@ -49,3 +49,51 @@ INNER JOIN titles as t
 WHERE (de.to_date = '9999-01-01')
 	AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-21')
 ORDER BY e.emp_no;
+
+-- New Queries
+
+SELECT e.emp_no, 
+	e.first_name, 
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
+INTO retiring_year_one
+FROM employees as e
+LEFT JOIN titles as t
+	ON e.emp_no = t.emp_no
+WHERE (e.birth_date BETWEEN '1952-01-01'AND '1952-12-31')
+	AND (t.to_date = '9999-01-01')
+ORDER BY e.emp_no;
+
+SELECT COUNT(emp_no), title
+INTO wave_one
+FROM retiring_year_one
+GROUP BY title
+ORDER BY count DESC;
+
+SELECT *
+FROM wave_one;
+
+SELECT e.emp_no, 
+	e.first_name, 
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
+INTO retiring_year_four
+FROM employees as e
+LEFT JOIN titles as t
+	ON e.emp_no = t.emp_no
+WHERE (e.birth_date BETWEEN '1955-01-01'AND '1955-12-31')
+	AND (t.to_date = '9999-01-01')
+ORDER BY e.emp_no;
+
+SELECT COUNT(emp_no), title
+INTO final_wave
+FROM retiring_year_four
+GROUP BY title
+ORDER BY count DESC;
+
+SELECT *
+FROM final_wave;
